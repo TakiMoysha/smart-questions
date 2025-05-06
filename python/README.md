@@ -151,3 +151,18 @@ print(tuple(zip(iterator, map(lambda x: x**2, iterator))))
 ```
 
 Вывод: `( (0, 1), (2, 9), (4, 25), (6, 49), (8, 81) )`
+
+
+## Decorators
+
+```python
+def wrapper(*, klass=Exception)
+  def _wrapper(fn):
+    @functools.wraps
+    def inner(*args, **kwargs):
+      return fn(*args, **kwargs)
+    return inner
+  return _wrapper
+```
+
+
